@@ -1,17 +1,14 @@
 # MU Tracker - Git Ignore File
 
 # Sensitive Configuration Files
-config.php
 config_production.php
 config_local.php
 
 # Database Files
-*.db
 *.sqlite
 *.sqlite3
 
 # Log Files
-logs/
 *.log
 error.log
 php_errors.log
