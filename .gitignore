@@ -1,0 +1,88 @@
+# MU Tracker - Git Ignore File
+
+# Sensitive Configuration Files
+config.php
+config_production.php
+config_local.php
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+
+# Log Files
+logs/
+*.log
+error.log
+php_errors.log
+debug.log
+
+# Temporary Files
+temp/
+tmp/
+cache/
+
+# Environment Files
+.env
+.env.local
+.env.production
+.env.development
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Composer Dependencies (uncomment if using Composer)
+# vendor/
+# composer.lock
+
+# Node.js Dependencies (if using any)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build Files
+build/
+dist/
+
+# Backup Files
+*.bak
+*.backup
+*.old
+
+# Debug and Test Files
+debug_*.php
+test_*.php
+production_error_checker.php
+simple_error_viewer.php
+error_view.php
+
+# User Uploads
+uploads/
+files/
+
+# Session Files
+sessions/
+
+# Sensitive Data
+passwords.txt
+credentials.txt
+secrets.txt
+
+# Local Development
+localhost/
+local/
+dev/

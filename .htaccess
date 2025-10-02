@@ -1,0 +1,77 @@
+# MU Tracker - InfinityFree Compatible Configuration
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Remove .php extension from URLs (InfinityFree compatible)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Security - Block access to sensitive files
+<Files "config.php">
+    Require all denied
+</Files>
+
+<Files "config.production.php">
+    Require all denied
+</Files>
+
+<Files "functions_debug.php">
+    Require all denied
+</Files>
+
+<Files "auth.php">
+    Require all denied
+</Files>
+
+# Block database files
+<Files "*.db">
+    Require all denied
+</Files>
+
+<Files "*.sql">
+    Require all denied
+</Files>
+
+# Block log files and logs directory
+<Files "*.log">
+    Require all denied
+</Files>
+
+# Block access to logs directory
+RewriteRule ^logs(/.*)?$ - [F,L]
+
+# Block backup files
+<Files "*.bak">
+    Require all denied
+</Files>
+
+<Files "*.backup">
+    Require all denied
+</Files>
+
+# Block temporary files
+<Files "*.tmp">
+    Require all denied
+</Files>
+
+# Disable directory browsing
+Options -Indexes
+
+# Prevent access to .htaccess itself
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+# Security headers (if supported)
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Custom Error Pages
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
+ErrorDocument 500 /500.php

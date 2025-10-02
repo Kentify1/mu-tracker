@@ -1,0 +1,21 @@
+{
+    "name": "kent/mu-tracker",
+    "description": "MU Online Character Tracker",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Kent\\MuTracker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kent"
+        }
+    ],
+    "require": {
+        "fabpot/goutte": "^4.0",
+        "guzzlehttp/guzzle": "^7.10",
+        "symfony/http-client": "^6.4",
+        "spatie/browsershot": "^5.0"
+    }
+}
